@@ -20,6 +20,7 @@
     "@unocss/reset": "^0.62.4",
     "@vueuse/core": "^11.1.0",
     "axios": "^1.7.7",
+    "gltf-pipeline": "^4.1.0",
     "lodash-es": "^4.17.21",
     "mitt": "^3.0.1",
     "pinia": "^2.2.2",

@@ -5,4 +5,5 @@ declare interface Window {
     securityJsCode: string
   }
   forceWebGL: boolean
+  plus?: any
 }

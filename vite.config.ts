@@ -41,13 +41,13 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
-    base: `/${env.VITE_BASE_PATH}`,
+    base: `./`,
     build: {
       outDir: env.VITE_OUT_DIR || 'dist',
       minify: buildMinify,
       terserOptions: {
         compress: {
-          drop_console: !DROP_CONSOLE_MODE.includes(mode),
+          // drop_console: !DROP_CONSOLE_MODE.includes(mode),
           drop_debugger: true,
         },
       },
@@ -136,8 +136,8 @@ export default defineConfig(({ mode }) => {
       }),
       viteVConsole({
         entry: path.resolve('src/main.ts'),
-        localEnabled: mode !== 'production',
-        enabled: mode !== 'production',
+        localEnabled: true,
+        enabled: true,
         config: {
           maxLogNumber: 1000,
           theme: 'dark',

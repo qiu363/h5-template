@@ -9,7 +9,29 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  import useCurrentInstance from '@/hooks/useCurrentInstance'
+
+  const { global } = useCurrentInstance()
+  const isReady = ref(false)
+  const timer = setInterval(() => {
+    if (typeof plus !== 'undefined') {
+      clearInterval(timer)
+      isReady.value = true
+
+      global.$eventBus.emit('plusReady', isReady.value)
+
+      plusInit()
+    } else {
+      clearInterval(timer)
+    }
+  }, 100)
+
+  const plusInit = () => {
+    plus.navigator.setStatusBarBackground('#FFFFFF')
+    plus.navigator.setStatusBarStyle('dark')
+  }
+</script>
 
 <style lang="less">
   @import './less/index.less';

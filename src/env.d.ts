@@ -13,6 +13,12 @@ declare const wx: {
   }
 }
 
+declare const plus: {
+  io: any
+  isReady: boolean
+  [key: string]: any
+}
+
 interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string
   readonly VITE_APP_BASE_API: string
