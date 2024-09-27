@@ -36,4 +36,13 @@ const routerPush = (path, title = '', ani = 'pop-in') => {
   }
 }
 
-export { renderMarkerTpl, getFullUrl, routerPush }
+const routerBack = () => {
+  if (typeof plus !== 'undefined' && plus?.webview) {
+    const webview = plus.webview.currentWebview()
+    webview.back()
+  } else {
+    router.back()
+  }
+}
+
+export { renderMarkerTpl, getFullUrl, routerPush, routerBack }
